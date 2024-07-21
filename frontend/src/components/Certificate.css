@@ -1,0 +1,43 @@
+.certificate-container {
+  width: 800px;
+  height: 600px;
+  border: 2px solid #000;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.certificate-title {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 28px;
+}
+
+.certificate-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.certificate-text {
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+}
+
+.certificate-signature {
+  flex: 1;
+  padding: 20px;
+  text-align: right;
+}
+
+.recipient-name {
+  margin: 10px 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.course-name {
+  margin: 10px 0;
+  font-size: 24px;
+}
