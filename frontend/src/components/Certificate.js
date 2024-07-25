@@ -3,6 +3,9 @@ import "./Certificate.css"; // Import CSS for styling
 import backgroundImage from "../assets/abstract-geometric-background-in-flat-design-free-vector.jpg"; // Adjust the path as needed
 import logo from "../assets/smit.png";
 
+
+
+
 const Certificate = ({ recipientName, courseName, completionDate }) => {
   const containerStyle = {
     backgroundImage: `url(${backgroundImage})`,
