@@ -4,7 +4,7 @@ import "./SignIn.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import axios from "axios";  
 
 const validateEmail = (value) => {
   let error;
@@ -18,7 +18,6 @@ const validateEmail = (value) => {
 
 const validatePassword = (value) => {
   let error;
-
   if (!value) {
     error = "Password is required";
   } else if (value.length < 6) {
@@ -29,7 +28,6 @@ const validatePassword = (value) => {
 
 const validateRole = (value) => {
   let error;
-
   if (!value) {
     error = "Role is required";
   }
@@ -37,8 +35,31 @@ const validateRole = (value) => {
 };
 
 function Signin() {
+  const handleSignin = async (values, { resetForm }) => {
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/login', {
+        email: values.email,
+        password: values.password,
+        role: values.role,
+      });
+
+      if (response.status === 200) {
+        toast.success("Sign In Successful!");
+        console.log("User Data: ", response.data); // Handle the user data as needed
+        resetForm();
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.message) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Sign In Failed!");
+      }
+    }
+  };
+
   return (
     <div className="container mt-5">
+      <ToastContainer />
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card-body">
@@ -55,13 +76,9 @@ function Signin() {
               initialValues={{
                 email: "",
                 password: "",
-                role: "", 
+                role: "",
               }}
-              onSubmit={(values, { resetForm }) => {
-                toast("Sign In Successful!");
-                console.log("Form Data: ", values);
-                resetForm();
-              }}
+              onSubmit={handleSignin}
             >
               {({ errors, touched, isSubmitting }) => (
                 <Form>
@@ -130,7 +147,7 @@ function Signin() {
                     Sign In
                   </button>
                   <p className="text-center">
-                    Don't have an account? <a href="/signup">Create Account</a>
+                    Don't have an account? <a href="/">Create Account</a>
                   </p>
                 </Form>
               )}
@@ -138,10 +155,8 @@ function Signin() {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 }
 
 export default Signin;
-
