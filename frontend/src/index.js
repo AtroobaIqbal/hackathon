@@ -12,10 +12,10 @@ import {
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 const router = createBrowserRouter([
   {
-    path: "/signup",
+    path: "/",
     element: <Signup />,
   },
   {
