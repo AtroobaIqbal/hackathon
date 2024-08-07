@@ -17,7 +17,7 @@ const Certificate = ({ recipientName, courseName, completionDate }) => {
   return (
     <div className="certificate-container" style={containerStyle}>
       <div className="certificate-header">
-        <img src={logo} />
+        <img src={logo} alt="" />
         <h1 className="certificate-title">Certificate of Completion</h1>
       </div>
       <div className="certificate-body">

@@ -1,0 +1,64 @@
+/* Navbar container styling */
+.navbar {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #fff; /* Background color for the navbar */
+    border-bottom: 1px solid #ddd; /* Optional: border at the bottom of the navbar */
+}
+
+/* Container for left-aligned items */
+.navbar-left {
+    display: flex;
+    align-items: center; /* Vertically center items */
+}
+
+/* Toggle button styling */
+.navbar-toggle {
+    background: none;
+    border: none;
+    color: #245eca;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px; /* Space between toggle button and the next element */
+}
+
+/* Logo container styling */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo image styling */
+.navbar-logo-img {
+    height: 40px; /* Adjust based on your logo size */
+    margin-right: 10px; /* Space between logo image and text */
+}
+
+
+.navbar-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar-link {
+    color: #819deb;
+    text-decoration: none;
+  }
+
+/* Logout button styling */
+.navbar-logout {
+    background-color: #f1f2f5; /* Background color for the logout button */
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: #3482e7;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: auto; /* Pushes the logout button to the right */
+}
+
+
+.navbar-logout:hover {
+    background-color: #3633da; /* Darker red for hover effect */
+  }
