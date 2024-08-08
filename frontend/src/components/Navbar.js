@@ -7,7 +7,7 @@ import { FaBars, FaSignOutAlt } from 'react-icons/fa'; // Import React Icons
 const Navbar = ({ onToggleSidebar }) => {
     const handleLogout = () => {
         // Implement logout logic here, e.g., clearing auth tokens
-        window.location.href = ''; // Redirect to login page
+        window.location.href = './signup'; // Redirect to login page
     };
     return (
             <nav className="navbar">

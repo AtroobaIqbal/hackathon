@@ -2,10 +2,11 @@ import React from 'react';
 import './Sidebar.css'; // Import the CSS file for styling
 import { FaBook, FaUser } from 'react-icons/fa';
 
+
 const Sidebar = ({ isOpen, onClose }) => {
     const handleLogout = () => {
         // Implement logout logic here, e.g., clearing auth tokens
-        window.location.href = ''; // Redirect to login page
+        window.location.href = './signup'; // Redirect to login page
     };
 
     return (
