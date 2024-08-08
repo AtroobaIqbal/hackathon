@@ -34,7 +34,7 @@ const Sidedash = () => {
               <FaAngleDown />
             </button>
             {isStudentDropdownOpen && (
-              <div className="absolute left-0 mt-2 bg-white text-gray-800 border border-gray-300 rounded shadow-lg max-h-60 overflow-y-auto w-full">
+              <div className="absolute left-0 mt-2 bg-white text-gray-800 border border-gray-300 rounded shadow-lg max-h-60 overflow-y-auto w-full z-10">
                 <ul className="list-none p-0 m-0">
                   {studentList.map((student, index) => (
                     <li key={index} className="hover:bg-gray-200">
@@ -52,7 +52,7 @@ const Sidedash = () => {
           <div className="relative">
             <Link
               to="/calendar"
-              className="flex no-underline text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
+              className="flex no-underline text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none z-0"
             >
               <span className="mr-2">Calendar</span>
               <FaCalendarAlt />
