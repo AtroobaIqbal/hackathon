@@ -1,10 +1,13 @@
 /* Navbar container styling */
+/* Navbar container */
 .navbar {
     display: flex;
     align-items: center; /* Vertically center items */
     padding: 10px 20px; /* Adjust padding as needed */
     background-color: #fff; /* Background color for the navbar */
-    border-bottom: 1px solid #ddd; /* Optional: border at the bottom of the navbar */
+    border-bottom: 1px solid #ddd; /* Border at the bottom of the navbar */
+    width: 100%; /* Adjust to full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 /* Container for left-aligned items */
@@ -35,15 +38,27 @@
     margin-right: 10px; /* Space between logo image and text */
 }
 
+/* Navbar links */
+.navbar-links {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Display links in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
 
 .navbar-links li {
-    margin-left: 20px;
-  }
-  
-  .navbar-link {
+    margin-left: 20px; /* Space between links */
+}
+
+.navbar-link {
     color: #819deb;
     text-decoration: none;
-  }
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.navbar-link:hover {
+    color: #245eca; /* Hover color for links */
+}
 
 /* Logout button styling */
 .navbar-logout {
@@ -58,7 +73,7 @@
     margin-left: auto; /* Pushes the logout button to the right */
 }
 
-
 .navbar-logout:hover {
-    background-color: #3633da; /* Darker red for hover effect */
-  }
+    background-color: #3633da; /* Darker blue for hover effect */
+    color: #fff; /* White text color on hover */
+}

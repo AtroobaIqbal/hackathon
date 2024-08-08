@@ -1,0 +1,42 @@
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    background-color: #f0f8ff; /* Light blue background */
+    margin-right: 100px;
+}
+
+.react-calendar {
+    width: 80%; /* Adjust width as needed */
+    max-width: 1500px; /* Optional max width */
+    height: 700px; /* Adjust height as needed */
+    background-color: #ffffff; /* White background for calendar */
+    border: 1px solid #b0c4de; /* Light steel blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style for selected date and other elements */
+.react-calendar__tile {
+    border-radius: 5px; /* Rounded corners for individual tiles */
+}
+
+.react-calendar__tile--active {
+    background-color: #4682b4; /* Dark blue for active date */
+    color: white; /* White text for contrast */
+}
+
+.react-calendar__tile--hasActive {
+    background-color: #87cefa; /* Light blue for hovered tiles */
+}
+
+/* Additional styling for selected date display */
+.selected-date {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #4682b4; /* Dark blue text */
+}
