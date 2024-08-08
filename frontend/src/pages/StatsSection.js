@@ -6,13 +6,14 @@ import Sidedash from './sidedashboard';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
+
 const links = [
   { name: 'Open roles', href: '#' },
   { name: 'Internship program', href: '#' },
   { name: 'Our values', href: '#' },
   { name: 'Meet our leadership', href: '#' },
 ]
-const stat = [
+const Work = [
   { name: 'Offices worldwide', value: '12' },
   { name: 'Full-time colleagues', value: '300+' },
   { name: 'Hours per week', value: '40' },
@@ -118,7 +119,7 @@ const Stats = () => {
       <Sidedash />
 
       {/* {page} */}
-      <div className="relative isolate overflow-hidden bg-gray-900 mb-20 ml-4 py-24 sm:py-32">
+      <div className="relative isolate fixed overflow-hidden bg-gray-900 mb-20 ml-4 py-24 sm:py-32">
       <img
         alt=""
         src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
@@ -157,18 +158,18 @@ const Stats = () => {
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 ml-20  gap-y-6  text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-            {links.map((link) => (
-              <a key={link.name} href={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
+        <div className="grid grid-cols-1 gap-x-8 ml-20 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            {links.map((links) => (
+              <a key={links.name} href={links.href} className="text-xl no-underline hover:text-blue-900" > 
+                {links.name} <span aria-hidden="true">&rarr;</span>
               </a>
             ))}
           </div>
           <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 ml-20 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.name} className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">{stat.name}</dt>
-                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{stat.value}</dd>
+            {Work.map((Work) => (
+              <div key={Work.name} className="flex flex-col-reverse">
+                <dt className="text-base leading-7 text-gray-300">{Work.name}</dt>
+                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{Work.value}</dd>
               </div>
             ))}
           </dl>
@@ -178,14 +179,14 @@ const Stats = () => {
     
     <div className="mx-auto mb-6 px-6 lg:px-8 max-w-1500">
         <div className="flex flex-wrap justify-center gap-8">
-          {stats.map((stat) => (
-            <div key={stat.id} className="flex flex-col items-center gap-y-4 p-6 border rounded-lg shadow-lg bg-violet-200 max-w-xs">
+          {stats.map((stats) => (
+            <div key={stats.id} className="flex flex-col items-center gap-y-4 p-6 border rounded-lg shadow-lg bg-violet-200 max-w-xs">
               <div className="flex justify-center items-center text-4xl text-gray-600 mb-4">
-                <i className={stat.icon}></i>
+                <i className={stats.icon}></i>
               </div>
-              <dt className="text-base leading-7 text-gray-600">{stat.name}</dt>
+              <dt className="text-base leading-7 text-gray-600">{stats.name}</dt>
               <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 mt-20 sm:text-5xl">
-                {stat.value}
+                {stats.value}
               </dd>
             </div>
           ))}
