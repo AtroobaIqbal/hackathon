@@ -39,7 +39,7 @@ function App() {
                             path="/"
                             element={
                                 <div className="content">
-                                    <img src={image} alt="Background" />
+                                    <img className='image' src={image} alt="Background" />
                                     <h1>GENERATE YOUR CERTIFICATE HERE !!</h1>
                                     <a href="/courses" className="link">View Courses</a>
                                 </div>

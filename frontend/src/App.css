@@ -94,7 +94,7 @@ html, body, #root {
 }
 
 /* Main content area styling */
-.main-content {
+.content {
   margin-top: 15px; /* Adjust this value based on Navbar height */
   margin-left: 250px; /* Adjust this value based on Sidebar width */
   flex: 1;
@@ -106,20 +106,20 @@ html, body, #root {
   height: 500px;
 }
 
-/* Shift content when sidebar is open */
-.main-content.shifted {
-  margin-left: 300px; /* Adjust this value based on expanded Sidebar width */
-}
-
 /* Heading styling */
 .content h1 {
-  font-size: 1em;
+  font-size: 15px;
   color: rgb(102, 100, 100);
+ margin-right: 37rem;
 }
 
-.content img {
+.image {
   margin-top: 20px;
-  width: 550px;
+  width: 600px;
+  align-self: center;
+  margin-left: -16rem;
+  
+
 }
 
 /* Link styling */
@@ -135,6 +135,7 @@ html, body, #root {
   background-color: #00f; /* Background color for the button */
   transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
   cursor: pointer; /* Changes cursor to pointer on hover */
+  margin-right: 600px;
 }
 
 .link:hover {
