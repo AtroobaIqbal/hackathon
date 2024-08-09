@@ -4,8 +4,9 @@ import "./SignIn.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";  
+import axios from "axios";
 
+// Validation functions
 const validateEmail = (value) => {
   let error;
   if (!value) {
@@ -34,13 +35,23 @@ const validateRole = (value) => {
   return error;
 };
 
+const validateRollNo = (value, role) => {
+  let error;
+  if (role === "student" && !value) {
+    error = "Roll No is required for students";
+  }
+  return error;
+};
+
 function Signin() {
   const handleSignin = async (values, { resetForm }) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const rollNo = values.role === "student" ? `WMA${values.rollNo}` : ""; // Prefix rollNo with "WMA"
+      const response = await axios.post("http://localhost:5000/api/auth/login", {
         email: values.email,
         password: values.password,
         role: values.role,
+        rollNo: rollNo,
       });
 
       if (response.status === 200) {
@@ -77,10 +88,11 @@ function Signin() {
                 email: "",
                 password: "",
                 role: "",
+                rollNo: "", 
               }}
               onSubmit={handleSignin}
             >
-              {({ errors, touched, isSubmitting }) => (
+              {({ errors, touched, isSubmitting, values, setFieldValue }) => (
                 <Form>
                   <div className="form-group mb-3">
                     <label htmlFor="email">Email address</label>
@@ -127,6 +139,13 @@ function Signin() {
                         errors.role && touched.role ? "is-invalid" : ""
                       }`}
                       validate={validateRole}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setFieldValue("role", value);
+                        if (value === "student") {
+                          setFieldValue("rollNo", ""); 
+                        }
+                      }}
                     >
                       <option value="">Select a role</option>
                       <option value="admin">Admin</option>
@@ -138,6 +157,33 @@ function Signin() {
                       className="invalid-feedback"
                     />
                   </div>
+
+                  {values.role === "student" && (
+                    <div className="form-group mb-4">
+                      <label htmlFor="rollNo">Roll No</label>
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text">WMA</span>
+                        </div>
+                        <Field
+                          type="text"
+                          name="rollNo"
+                          className={`form-control ${
+                            errors.rollNo && touched.rollNo ? "is-invalid" : ""
+                          }`}
+                          placeholder="Enter Roll No"
+                          validate={(value) =>
+                            validateRollNo(value, values.role)
+                          }
+                        />
+                      </div>
+                      <ErrorMessage
+                        component="div"
+                        name="rollNo"
+                        className="invalid-feedback"
+                      />
+                    </div>
+                  )}
 
                   <button
                     type="submit"
