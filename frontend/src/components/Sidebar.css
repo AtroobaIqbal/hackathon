@@ -1,0 +1,98 @@
+/* Sidebar styling */
+.sidebar {
+  height: 100vh; /* Full height of the viewport */
+  width: 180px; /* Width of the sidebar */
+  background-color: white;
+  position: fixed; /* Fixed position on the left side */
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+   /* Ensure the sidebar is above other content */
+}
+
+/* Open sidebar */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Close button styling */
+.sidebar-close {
+  background: none;
+  border: none;
+  color: #245eca;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px; /* Ensure there's clickable space around the button */
+}
+
+/* Responsive adjustments for close button */
+@media (max-width: 1366px) {
+  .sidebar-close {
+    font-size: 22px; /* Smaller font size for close button */
+    padding: 8px;
+    margin-left: 150px;
+    margin-bottom: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-close {
+    font-size: 20px; /* Further reduce font size for very small screens */
+    padding: 6px; /* Further reduce padding */
+  }
+}
+
+/* Sidebar items styling */
+.sidebar-item {
+  list-style-type: none;
+  margin-top: 16px;
+  
+}
+
+/* Links in sidebar and logout button styling */
+.sidebar-link,
+.logout-button {
+  color: #245eca;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Hover effect for links and logout button */
+.sidebar-link:hover,
+.logout-button:hover {
+  background-color: rgb(169, 221, 241);
+  border-radius: 4px;
+}
+
+/* Icon styling within sidebar links */
+.icon {
+  margin-right: 10px;
+}
+
+/* Styling for logout button */
+.logout-button {
+  background-color: #1037a1; /* Blue color for logout button */
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: auto; /* Pushes the logout button to the bottom of the sidebar */
+}
+
+.logout-button:hover {
+  background-color: #0d2a6d; /* Darker blue for hover effect */
+}

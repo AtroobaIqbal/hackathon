@@ -1,0 +1,150 @@
+/* Base navbar container styling */
+.navbar {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #fff; /* Background color for the navbar */
+    border-bottom: 1px solid #ddd; /* Border at the bottom of the navbar */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Container for left-aligned items */
+.navbar-left {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    flex-grow: 1; /* Allow space to be occupied */
+}
+
+/* Toggle button styling */
+.navbar-toggle {
+    background: none;
+    border: none;
+    color: #245eca;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px; /* Space between toggle button and the next element */
+    display: none; /* Hidden by default */
+}
+
+/* Logo container styling */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow space to be occupied */
+}
+
+/* Logo image styling */
+.navbar-logo-img {
+    height: 40px; /* Adjust based on your logo size */
+    margin-right: 10px; /* Space between logo image and text */
+}
+
+/* Navbar links */
+.navbar-links {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Display links in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.navbar-link {
+    color: #819deb;
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.navbar-link:hover {
+    color: #245eca; /* Hover color for links */
+}
+
+/* Logout button styling */
+.navbar-logout {
+    background-color: #f1f2f5; /* Background color for the logout button */
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: #3482e7;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: auto; /* Pushes the logout button to the right */
+}
+
+.navbar-logout:hover {
+    background-color: #3633da; /* Darker blue for hover effect */
+    color: #fff; /* White text color on hover */
+}
+
+/* Responsive adjustments for screens up to 1366px */
+@media (max-width: 1366px) {
+    .navbar-links {
+        display: flex; /* Keep links visible, but manage their spacing */
+        margin-left: auto; /* Align links to the right */
+    }
+
+    .navbar-toggle {
+        display: block; /* Hide toggle button for larger screens */
+    }
+}
+
+/* Adjustments for screens up to 1200px */
+@media (max-width: 1200px) {
+    .navbar-links {
+        display: none; /* Hide links for smaller screens */
+    }
+
+    .navbar-toggle {
+        display: block; /* Show toggle button */
+    }
+}
+
+/* Adjustments for screens up to 768px */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px;
+        height: 100px; /* Adjust height */
+    }
+
+    .navbar-left, .navbar-logo {
+        flex-grow: 0; /* Prevent flex-grow in smaller screens */
+    }
+
+    .navbar-toggle {
+        font-size: 40px; /* Adjust font size for smaller screens */
+        margin-right: 0; /* Remove margin */
+        margin-top: 40px; /* Adjust margin */
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #fff; /* Background color */
+        position: absolute; /* Position it absolutely to overlay */
+        top: 60px; /* Adjust based on navbar height */
+        left: 0; /* Align to the left */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow for overlay */
+    }
+
+    .navbar-links li {
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-link {
+        padding: 15px; /* Add padding for better touch experience */
+        display: block;
+        margin-top: 10px; /* Make links block-level for easier clicking */
+    }
+
+    .navbar-logout {
+        margin-left: 100px;
+        margin-top: 15px; /* Add top margin for logout button */
+    }
+}
