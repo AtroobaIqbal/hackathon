@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
-import './Profile.css'; // Import the CSS file for styling
-import { FaInfoCircle } from 'react-icons/fa'; // Info icon
+import './Profile.css'; // Import the CSS file for styling // Info icon
 import profileImg from '../assets/profile.jpg';
 
 function Profile() {
@@ -39,7 +38,7 @@ function Profile() {
           <h1 className="student-name">{name}</h1>
           <img src={profilePicture} alt="Profile" className="profile-picture" />
           <button className="info-button">
-            <FaInfoCircle /> Profile Info
+             Profile Info
           </button>
           <div className="edit-profile">
             <div>

@@ -1,22 +1,47 @@
+/* Base styling */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Main app container */
 .App {
   text-align: center;
   background-color: white;
-  height: 700px;
+  width: 100%; /* Full width */
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  background-image: url('./assets/image.png'); /* Background image */
+  background-repeat: no-repeat; /* Prevent background image repetition */
+/* Center the background image */
 }
 
+/* Logo styling */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
+ 
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header styling */
 .App-header {
-  background-color: #282c34;
+  background-color: #f9f9fa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,117 +55,157 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Main content area styling */
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  flex: 1;
 }
 
+/* Main content area with sidebar adjustments */
 .main-content {
-  margin-left: 220px;
   padding: 20px;
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 250px; /* Adjust for sidebar width */
+  transition: margin-left 0.3s ease; /* Smooth transition for sidebar */
+}
+
+@media (max-width: 1366px) {
+  .main-content {
+    margin-left: 130px; 
+    margin-bottom: 150px;/* Adjust for smaller screens */
+  }
+  .App {
+    background-position: right;
+    background-size: 600px;
+  }
 }
 
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 0;
+    margin-left: 0; /* Remove margin for smaller screens */
   }
+.App {
+  background-position: right;
+  background-size: 500px;
 }
-
-/* Ensure full height of the container */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-}
-
-/* Navbar styling */
-.Navbar {
-  position: fixed; /* Fix Navbar to the top */
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Ensure Navbar is above other content */
-  background: #f7f2f2; /* Example background color */
-  color: white; /* Text color */
-  padding: 10px 20px; /* Padding for the Navbar */
 }
 
 /* Sidebar styling */
 .Sidebar {
-  position: fixed; /* Fix Sidebar to the left */
-  width: 250px; /* Adjust width as needed */
+  position: fixed;
+  width: 200px;
   height: 100%;
   top: 60px; /* Position below Navbar */
   left: 0;
-  background: #fcfafa; /* Example background color */
-  color: white; /* Text color */
-  z-index: 1000; /* Ensure Sidebar is above other content */
-  transition: transform 0.3s ease; /* Smooth transition for opening/closing */
+  background: #fcfafa;
+  color: white;
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
 .Sidebar.closed {
-  transform: translateX(-100%); /* Hide Sidebar when closed */
+  transform: translateX(-100%);
 }
 
-/* Main content area styling */
+@media (max-width: 1366px) {
+  .Sidebar {
+    width: 180px; /* Adjust width for smaller screens */
+    top: 50px; /* Adjust based on reduced Navbar height */
+  }
+}
+
+@media (max-width: 768px) {
+  .Sidebar {
+    width: 200px; /* Further adjust width for small screens */
+    top: 50px; /* Adjust based on Navbar height */
+  }
+}
+
+/* Content styling */
 .content {
-  margin-top: 15px; /* Adjust this value based on Navbar height */
-  margin-left: 250px; /* Adjust this value based on Sidebar width */
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  margin-top: 60px; /* Adjust based on Navbar height */
+  margin-left: 250px; /* Adjust based on Sidebar width */
   padding: 20px;
-  color: rgb(48, 66, 228); /* Ensure text is visible */
-  background: url('./assets/image.png') no-repeat right ;
-  background-size: 550px;
-  transition: margin-left 0.3s ease; /* Smooth transition for sidebar */
-  height: 500px;
+  color: rgb(48, 66, 228);
+  background-size: cover; /* Ensure background image covers the container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent background image repetition */
+  height: auto; /* Make height dynamic based on content */
+  transition: margin-left 0.3s ease;
 }
 
-/* Heading styling */
-.content h1 {
-  font-size: 15px;
-  color: rgb(102, 100, 100);
- margin-right: 37rem;
+@media (max-width: 1366px) {
+
+  .content {
+    margin-left: 200px; /* Adjust for smaller screens */
+  }
+
+  .content h1 {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    color: rgb(102, 100, 100);
+    text-align: center; /* Center heading text */
+    margin: 20px 0; /* Margin around heading */
+    width: 80%; /* Adjust width to fit smaller screens */
+    max-width: 500px; /* Limit width */
+  }
+
+  .image {
+    margin-top: 20px;
+    width: 100%; /* Make image responsive */
+    max-width: 600px; /* Limit max-width to prevent overly large images */
+    align-self: center; /* Center the image */
+  }
+
+  .link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #221e1e;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid  rgb(8, 115, 185);
+    border-radius: 5px;
+    background-color: rgb(8, 115, 185);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    width: 200px;
+    text-align: center; /* Center text inside the button */
+  }
 }
 
-.image {
-  margin-top: 20px;
-  width: 600px;
-  align-self: center;
-  margin-left: -16rem;
-  
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0; /* Remove margin for smaller screens */
+    background-size: contain; /* Adjust background size for smaller screens */
+    background-position: center; /* Center background image */
+  }
 
-}
+  .content h1 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    margin: 20px 0; /* Adjust margin */
+  }
 
-/* Link styling */
-.link {
-  display: inline-block; /* Keeps the button size and layout inline */
-  margin-top: 10px;
-  color: #fff; /* Text color for the button */
-  text-decoration: none; /* Removes underline from the link */
-  font-size: 18px; /* Font size for the button text */
-  padding: 10px 20px; /* Padding inside the button */
-  border: 2px solid #00f; /* Border color and thickness */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #00f; /* Background color for the button */
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
-  cursor: pointer; /* Changes cursor to pointer on hover */
-  margin-right: 600px;
+  .image {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0; /* Adjust margin for smaller screens */
+  }
+
+  .link {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
 }
 
 .link:hover {
-  background-color: #71a0f7; /* Hover background color */
-  border-color: #71a0f7; /* Hover border color */
-  color: #fff; /* Ensure text color is readable on hover */
+  background-color: rgb(175, 216, 243);
+  border-color: #71a0f7;
+  color: #fff;
 }

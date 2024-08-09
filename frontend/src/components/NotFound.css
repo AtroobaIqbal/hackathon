@@ -1,0 +1,24 @@
+/* src/pages/NotFound.css */
+.not-found {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+  }
+  
+  .not-found h1 {
+    font-size: 3rem;
+  }
+  
+  .not-found p {
+    font-size: 1.25rem;
+  }
+  
+  .home-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .home-link:hover {
+    text-decoration: underline;
+  }
+  

@@ -20,9 +20,9 @@ const Sidedash = () => {
   };
 
   return (
-    <div className="fixed text-blue-600 top-0 left-0 w-64 h-screen bg-blue-800 shadow-md">
+    <div className="fixed top-0 left-0 w-64 h-screen bg-blue-800 shadow-md z-50">
       <div className="p-4">
-        <h2 className="text-xl font-semibold">ADMIN DASHBOARD</h2>
+        <h2 className="text-xl font-semibold text-white">ADMIN DASHBOARD</h2>
         <div className="mt-6">
           {/* Students Dropdown Button */}
           <div className="relative mb-4">
@@ -38,9 +38,9 @@ const Sidedash = () => {
                 <ul className="list-none p-0 m-0">
                   {studentList.map((student, index) => (
                     <li key={index} className="hover:bg-gray-200">
-                      <a href="./StatsSection.js" className="block px-4 py-2">
+                
                         {student}
-                      </a>
+                      
                     </li>
                   ))}
                 </ul>
@@ -49,47 +49,44 @@ const Sidedash = () => {
           </div>
 
           {/* Calendar Button */}
-          <div className="relative">
+          <div className="relative mb-4">
             <Link
               to="/calendar"
-              className="flex no-underline text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none z-0"
+              className="flex no-underline text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
             >
               <span className="mr-2">Calendar</span>
               <FaCalendarAlt />
             </Link>
           </div>
         </div>
-      </div>
-      <div>
-        <h4>OUR TEAM</h4>
-        <div className="relative mt-6">
+        <div>
+          <h4 className="text-white font-semibold mt-6">OUR TEAM</h4>
+          <div className="mt-6 space-y-2">
             <Link
               to=""
-              className="flex no-underline w-30 text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
+              className="flex no-underline text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
             >
               <span className="mr-2">PROFILE</span>
               <FaPersonBooth />
             </Link>
             <Link
               to=""
-              className="flex no-underline w-30 text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
+              className="flex no-underline text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
             >
               <span className="mr-2">PROFILE 1</span>
               <FaPersonBooth />
             </Link>
             <Link
               to=""
-              className="flex no-underline w-30 text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
+              className="flex no-underline text-white items-center w-full h-10 px-4 bg-blue-500 text-left rounded hover:bg-blue-600 focus:outline-none"
             >
               <span className="mr-2">PROFILE 2</span>
               <FaPersonBooth />
             </Link>
           </div>
-
+        </div>
       </div>
     </div>
-
-    
   );
 };
 

@@ -18,11 +18,12 @@ const Navbar = ({ onToggleSidebar }) => {
                     <img src={logo2} alt="Logo" className="navbar-logo-img" />
                     <ul className='navbar-link'>
                       <Link to="/" className="navbar-link">Home</Link>
-                      </ul>
-                </div>
-                <button className="navbar-logout" onClick={handleLogout} >
+                      </ul>  
+                      <button className="navbar-logout" onClick={handleLogout} >
                     <FaSignOutAlt /> {/* Logout icon */ }
                 </button>
+                </div>
+            
             </nav>
     );
 };

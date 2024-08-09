@@ -9,6 +9,8 @@ const Sidebar = ({ isOpen, onClose }) => {
         window.location.href = './signup'; // Redirect to login page
     };
 
+    
+
     return (
         <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
             <button className="sidebar-close" onClick={onClose}>

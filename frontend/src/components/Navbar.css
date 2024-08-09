@@ -1,12 +1,11 @@
-/* Navbar container styling */
-/* Navbar container */
+/* Base navbar container styling */
 .navbar {
     display: flex;
     align-items: center; /* Vertically center items */
     padding: 10px 20px; /* Adjust padding as needed */
     background-color: #fff; /* Background color for the navbar */
     border-bottom: 1px solid #ddd; /* Border at the bottom of the navbar */
-    width: 100%; /* Adjust to full width */
+    width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
@@ -14,6 +13,7 @@
 .navbar-left {
     display: flex;
     align-items: center; /* Vertically center items */
+    flex-grow: 1; /* Allow space to be occupied */
 }
 
 /* Toggle button styling */
@@ -24,12 +24,14 @@
     font-size: 24px;
     cursor: pointer;
     margin-right: 20px; /* Space between toggle button and the next element */
+    display: none; /* Hidden by default */
 }
 
 /* Logo container styling */
 .navbar-logo {
     display: flex;
     align-items: center;
+    flex-grow: 1; /* Allow space to be occupied */
 }
 
 /* Logo image styling */
@@ -76,4 +78,73 @@
 .navbar-logout:hover {
     background-color: #3633da; /* Darker blue for hover effect */
     color: #fff; /* White text color on hover */
+}
+
+/* Responsive adjustments for screens up to 1366px */
+@media (max-width: 1366px) {
+    .navbar-links {
+        display: flex; /* Keep links visible, but manage their spacing */
+        margin-left: auto; /* Align links to the right */
+    }
+
+    .navbar-toggle {
+        display: block; /* Hide toggle button for larger screens */
+    }
+}
+
+/* Adjustments for screens up to 1200px */
+@media (max-width: 1200px) {
+    .navbar-links {
+        display: none; /* Hide links for smaller screens */
+    }
+
+    .navbar-toggle {
+        display: block; /* Show toggle button */
+    }
+}
+
+/* Adjustments for screens up to 768px */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px;
+        height: 100px; /* Adjust height */
+    }
+
+    .navbar-left, .navbar-logo {
+        flex-grow: 0; /* Prevent flex-grow in smaller screens */
+    }
+
+    .navbar-toggle {
+        font-size: 40px; /* Adjust font size for smaller screens */
+        margin-right: 0; /* Remove margin */
+        margin-top: 40px; /* Adjust margin */
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #fff; /* Background color */
+        position: absolute; /* Position it absolutely to overlay */
+        top: 60px; /* Adjust based on navbar height */
+        left: 0; /* Align to the left */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow for overlay */
+    }
+
+    .navbar-links li {
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center align text */
+    }
+
+    .navbar-link {
+        padding: 15px; /* Add padding for better touch experience */
+        display: block;
+        margin-top: 10px; /* Make links block-level for easier clicking */
+    }
+
+    .navbar-logout {
+        margin-left: 100px;
+        margin-top: 15px; /* Add top margin for logout button */
+    }
 }

@@ -26,8 +26,7 @@ const Course = () => {
 
 
   const handleGenerate = () => {
-    // Implement generate logic here
-    alert('Generating content for ' + selectedCourse.title);
+    window.location.href = '/Certificate';
   };
 
 

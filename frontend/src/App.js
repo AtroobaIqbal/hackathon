@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import StatsSection from './pages/StatsSection';
 import CalendarPage from './pages/CalendarPage';
+import Certificate from './components/Certificate';
+
 
 function App() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -22,11 +24,15 @@ function App() {
         setSidebarOpen(false);
     };
 
+ 
+    
     return (
-        <Router>
+        <Router> 
             <div className="App">
-                <NavbarWrapper onToggleSidebar={toggleSidebar} />
-                <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+            <NavbarWrapper onToggleSidebar={toggleSidebar} />
+            <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+           
+                
                 <main className={`main-content ${isSidebarOpen ? 'shifted' : ''}`}>
                     <Routes>
                         <Route path="/admin" element={<StatsSection />} />
@@ -34,19 +40,22 @@ function App() {
                         <Route path="/courses/:id" element={<Courses />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/calendar" element={<CalendarPage />} />
+                        <Route path="/certificate" element={<Certificate />} />
                         <Route
                             path="/"
-                            element={
+                            element={ 
+                           
                                 <div className="content">
                                     <img className='image' src={image} alt="Background" />
                                     <h1>GENERATE YOUR CERTIFICATE HERE !!</h1>
                                     <a href="/courses" className="link">View Courses</a>
-                                </div>
+                                   </div>
                             }
                         />
                     </Routes>
+                    
                 </main>
-            </div>
+         </div>
         </Router>
     );
 }
