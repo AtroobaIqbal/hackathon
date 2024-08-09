@@ -32,7 +32,7 @@ const Course = () => {
 
   return (
     <div className="course-container">
-      <h1 className="course-heading">Select Courses</h1>
+      <h1 className="course-heading">SELECT COURSES</h1>
       <h3 className='course-heading2'>GENERATE YOUR CERTIFICATE !!</h3>
       <div className="course-cards">
         {courseData.map(course => (

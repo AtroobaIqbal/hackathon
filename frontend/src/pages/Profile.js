@@ -4,7 +4,7 @@ import './Profile.css'; // Import the CSS file for styling // Info icon
 import profileImg from '../assets/profile.jpg';
 
 function Profile() {
-  const [name, setName] = useState('John Doe');
+  const [name, setName] = useState('Tia');
   const [profilePicture, setProfilePicture] = useState(profileImg);
   const [newName, setNewName] = useState('');
   const [newProfilePic, setNewProfilePic] = useState('');
