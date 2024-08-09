@@ -1,0 +1,29 @@
+/* Base styling for the layout */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Main content area with sidebar adjustments */
+.main-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 250px; /* Adjust for sidebar width */
+    transition: margin-left 0.3s ease; /* Smooth transition for sidebar */
+}
+
+@media (max-width: 1366px) {
+    .main-content {
+        margin-left: 130px; 
+        margin-bottom: 150px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0; /* Remove margin for smaller screens */
+    }
+}

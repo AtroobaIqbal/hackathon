@@ -19,12 +19,12 @@ const Sidebar = ({ isOpen, onClose }) => {
             <aside className="Sidebar">
                 <ul>
                     <li className="sidebar-item">
-                        <a href="/courses" className="sidebar-link" target="_blank" rel="noopener noreferrer">
+                        <a href="/courses" className="sidebar-link" >
                             <FaBook className="icon" /> Courses
                         </a>
                     </li>
                     <li className="sidebar-item">
-                        <a href="/profile" className="sidebar-link" target="_blank" rel="noopener noreferrer">
+                        <a href="/profile" className="sidebar-link" >
                             <FaUser className="icon" /> Profile
                         </a>
                     </li>
