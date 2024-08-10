@@ -2,8 +2,8 @@
 .home-page-layout {
     display: flex;
     flex-direction: column;
-    width: 100%; /* Adjusted to full width */
-    max-width: 1500px; /* Set a max-width for large screens */
+    width: 100%; /* Full width */
+    max-width: 1500px; /* Maximum width for larger screens */
     min-height: 100vh;
     background-color: white;
     margin: 0 auto; /* Center layout horizontally */
@@ -16,46 +16,70 @@
     flex-direction: column;
     margin-left: 250px; /* Adjust based on Sidebar width */
     transition: margin-left 0.3s ease; /* Smooth transition for sidebar toggle */
-    padding: 20px; /* Adjust padding for content */
 }
 
-/* Adjustments for medium screens */
+/* Responsive adjustments */
 @media (max-width: 1366px) {
     .home-main-content {
-        margin-bottom: 10px;
-        margin-right: 70px; /* Adjust based on Sidebar width for medium screens *//* Background image URL */
-        background-repeat: no-repeat; /* Prevent image repetition */
-        background-size: 600px; /* Adjust size based on your design */
-        background-position: right bottom; /* Position the image at the bottom-right */
-    }
-    .image{
-        width: 600px;
-        
-    }
-    .home-main-content {
-        margin-right: 300px;
+        margin-right: 90px; /* Adjust based on Sidebar width */
     }
 
+    .image-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow images to wrap */
+        justify-content: center; /* Center images horizontally */
+    }
 
+    .image, .image2 {
+        width: 45%; /* Responsive width */
+        max-width: 500px; /* Limit max-width for larger screens */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px; /* Add spacing between images */
+    }
+
+    .heading{
+        margin-right: 400px;
+    }
 }
 
-/* Adjustments for medium screens */
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
     .home-main-content {
         margin-bottom: 200px;
         margin-right: 200px;
     }
+
+   
+    .image-container {
+        width: 800px;
+        display: flex;
+        flex-wrap: wrap; /* Allow images to wrap */
+        justify-content: center; /* Center images horizontally */
+    }
+
+    .heading{
+        margin-right: 300px;
+    }
+ 
 }
 
-/* Adjustments for smaller screens */
 @media (max-width: 768px) {
     .home-main-content {
         margin-left: 0; /* Remove margin for smaller screens */
         background-image: none; /* Remove background image */
     }
+
+    .image-container {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images horizontally */
+    }
+
+    .image, .image2 {
+        width: 100%; /* Full width for smaller screens */
+        max-width: none; /* Remove max-width limitation */
+        margin: 10px 0; /* Add vertical spacing */
+    }
 }
 
-/* Adjustments for very small screens */
 @media (max-width: 500px) {
     .home-page-layout {
         width: 100%;
@@ -63,18 +87,32 @@
     }
 
     .home-main-content {
-        margin-left: 50px; /* Remove margin */
-        margin-top: 10px; /* Adjust margin-top */ /* Reapply background image */
+        margin-left: 30px; /* Adjust margin */
+        margin-top: 10px; /* Adjust margin-top */
         background-repeat: no-repeat; /* Prevent image repetition */
         background-size: 350px; /* Adjust size for smaller screens */
         background-position: bottom; /* Position at the bottom */
         margin-bottom: 200px; /* Adjust margin-bottom */
         padding: 10px; /* Adjust padding */
-
     }
 
-    .image {
-        width: 250px;
+    .image, .image2 {
+        width: 100%; /* Full width for very small screens */
+        max-width: none; /* Remove max-width limitation */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .content h1 {
+        width: 100px;
+        margin-left: 10px;
+    }
+
+    .link {
+        margin-right: 60px;
+    }
+
+    .heading{
+        margin-left: 300px;
     }
 }
 
@@ -90,28 +128,38 @@
     color: rgb(48, 66, 228);
     background-size: cover; /* Ensure background image covers the container */
     background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-repeat: no-repeat; /* Prevent image repetition */
     height: auto; /* Make height dynamic based on content */
 }
 
 /* Styling for heading inside content */
 .content h1 {
-    margin-left: 40px; /* Center heading */
-    width: 300px; /* Full width */ /* Limit max-width */
-    font-size: 15px;
- /* Center text */
+    width: 100%; /* Full width */
+    font-size: 20px;
+    margin-bottom: 10px; /* Add bottom margin */
+    text-align: center; /* Center text */
 }
 
 /* Styling for images inside content */
-.image {
-    margin-top: 20px; /* Make image responsive */
-    max-width: 600px; /* Limit max-width to prevent overly large images */
+.image-container {
+    background-color: white;
+    max-width: 900px; /* Maximum width for container */
+    margin-bottom: 200px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center images horizontally */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 10px; /* Space between images */
+}
+
+.image, .image2 {
+    height: auto; /* Maintain aspect ratio */
+    max-width: 45%; /* Ensure images do not exceed container width */
+    margin: 5px; /* Add spacing between images */
 }
 
 /* Styling for link buttons */
 .link {
     display: inline-block;
-    margin-top: 10px;
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -123,6 +171,7 @@
     cursor: pointer;
     width: 150px;
     text-align: center; /* Center text inside the button */
+    margin-left: 90px; /* Adjust margin */
 }
 
 /* Hover effect for link */
