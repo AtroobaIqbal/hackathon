@@ -8,7 +8,7 @@ const NavbarWrapper = ({ onToggleSidebar }) => {
     const location = useLocation();
 
     // Only render Navbar if the path is '/'
-    if (location.pathname === '/') {
+    if (location.pathname === '/home') {
         return <Navbar onToggleSidebar={onToggleSidebar} />;
     }
 

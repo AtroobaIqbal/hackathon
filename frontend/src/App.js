@@ -1,13 +1,7 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import React, { useState } from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import NavbarWrapper from './components/NavbarWrapper'; // Import NavbarWrapper
-import Sidebar from './components/Sidebar';
 import Courses from './pages/Courses';
 import Profile from './pages/Profile';
-import image from './assets/smit.png'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import StatsSection from './pages/StatsSection';
 import CalendarPage from './pages/CalendarPage';
 import Certificate from './components/Certificate';
@@ -16,18 +10,6 @@ import Signin from './components/signIn/SignIn';
 
 
 function App() {
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-    const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
-    };
-
-    const closeSidebar = () => {
-        setSidebarOpen(false);
-    };
-
- 
-    
     return (
         <Router> 
             <div className="App">

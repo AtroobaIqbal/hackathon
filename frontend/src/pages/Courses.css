@@ -2,8 +2,10 @@
 .course-container {
   text-align: center;
   padding: 20px;
-  background: white;
+  background: rgb(191, 208, 253);
   max-width: 1500px;
+  height: 700px;
+  max-height: 2000px;
   margin: 0 auto; /* Center align the container */
 }
 
@@ -11,13 +13,14 @@
 .course-heading {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #001affdc;
+  color:   #3482e7;
+  font-style: italic;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Secondary heading styling */
 .course-heading2 {
-  color: rgb(34, 32, 32);
+  color: rgb(136, 133, 133);
 }
 
 /* Flexbox for course cards */
@@ -61,7 +64,7 @@
 
 /* Popup content styling */
 .popup-content {
-  background: white;
+  background: rgb(12, 57, 179);
   padding: 20px;
   border-radius: 8px;
   width: 300px;
@@ -101,7 +104,7 @@
 @media (max-width: 1366px) {
   .course-heading,
   .course-heading2 {
-      font-size: 1.8em; /* Slightly smaller font size */
+      font-size: 2em; /* Slightly smaller font size */
   }
 
   .course-cards {
@@ -109,7 +112,11 @@
   }
   
   .course-card {
-      width: 180px; /* Smaller card width */
+      width: 250px; 
+      height: 200px;
+      color: #3482e7;
+      background-color: #19185e;
+      box-shadow: #3e50f1dc 5px 5px 5px;/* Smaller card width */
   }
 }
 
@@ -141,6 +148,9 @@
 }
 
 @media (max-width: 480px) {
+  .course-container{
+    height: 1800px;
+  }
   .course-heading,
   .course-heading2 {
       font-size: 1em;

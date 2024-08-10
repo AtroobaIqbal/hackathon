@@ -1,0 +1,133 @@
+/* Base styling for home-page-layout */
+.home-page-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Adjusted to full width */
+    max-width: 1500px; /* Set a max-width for large screens */
+    min-height: 100vh;
+    background-color: white;
+    margin: 0 auto; /* Center layout horizontally */
+}
+
+/* Styling for main content area */
+.home-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Adjust based on Sidebar width */
+    transition: margin-left 0.3s ease; /* Smooth transition for sidebar toggle */
+    padding: 20px; /* Adjust padding for content */
+}
+
+/* Adjustments for medium screens */
+@media (max-width: 1366px) {
+    .home-main-content {
+        margin-bottom: 10px;
+        margin-right: 70px; /* Adjust based on Sidebar width for medium screens *//* Background image URL */
+        background-repeat: no-repeat; /* Prevent image repetition */
+        background-size: 600px; /* Adjust size based on your design */
+        background-position: right bottom; /* Position the image at the bottom-right */
+    }
+    .image{
+        width: 600px;
+        
+    }
+    .home-main-content {
+        margin-right: 300px;
+    }
+
+
+}
+
+/* Adjustments for medium screens */
+@media (max-width: 1024px){
+    .home-main-content {
+        margin-bottom: 200px;
+        margin-right: 200px;
+    }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .home-main-content {
+        margin-left: 0; /* Remove margin for smaller screens */
+        background-image: none; /* Remove background image */
+    }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 500px) {
+    .home-page-layout {
+        width: 100%;
+        min-height: 1000px; /* Ensure enough height for small screens */
+    }
+
+    .home-main-content {
+        margin-left: 50px; /* Remove margin */
+        margin-top: 10px; /* Adjust margin-top */ /* Reapply background image */
+        background-repeat: no-repeat; /* Prevent image repetition */
+        background-size: 350px; /* Adjust size for smaller screens */
+        background-position: bottom; /* Position at the bottom */
+        margin-bottom: 200px; /* Adjust margin-bottom */
+        padding: 10px; /* Adjust padding */
+
+    }
+
+    .image {
+        width: 250px;
+    }
+}
+
+/* Styling for content area */
+.content {
+    margin-left: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    margin-top: 60px; /* Adjust based on Navbar height */
+    padding: 20px;
+    color: rgb(48, 66, 228);
+    background-size: cover; /* Ensure background image covers the container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    height: auto; /* Make height dynamic based on content */
+}
+
+/* Styling for heading inside content */
+.content h1 {
+    margin-left: 40px; /* Center heading */
+    width: 300px; /* Full width */ /* Limit max-width */
+    font-size: 15px;
+ /* Center text */
+}
+
+/* Styling for images inside content */
+.image {
+    margin-top: 20px; /* Make image responsive */
+    max-width: 600px; /* Limit max-width to prevent overly large images */
+}
+
+/* Styling for link buttons */
+.link {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid rgb(8, 115, 185);
+    border-radius: 5px;
+    background-color: rgb(8, 115, 185);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    width: 150px;
+    text-align: center; /* Center text inside the button */
+}
+
+/* Hover effect for link */
+.link:hover {
+    background-color: rgb(248, 251, 253);
+    border-color: #9ebbd8;
+    color: rgb(8, 115, 185);
+}
