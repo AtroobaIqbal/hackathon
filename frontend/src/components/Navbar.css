@@ -21,7 +21,7 @@
     display: none; /* Hidden by default */
     position: absolute; /* Position relative to the navbar container */
     top: 15px; /* Adjust to align with top of navbar */ /* Align to the right side */
-    z-index: 100; /* Ensure it's on top */
+    margin-left: 10px; /* Ensure it's on top */
 }
 
 /* Logo container styling */
@@ -97,11 +97,19 @@
     .navbar-toggle {
         display: block; /* Show toggle button */
     }
+    
+    .navbar-logout{
+        margin-bottom: 10px;
+    }
+
 
 }
 
 /* Adjustments for screens up to 1200px */
 @media (max-width: 1200px) {
+    .navbar{
+        width: 100%;
+    }
     .navbar-links {
         display: none; /* Hide links for smaller screens */
     }
@@ -112,11 +120,16 @@
     .navbar-toggle {
         display: block; /* Show toggle button */
     }
+
+    /* .navbar-logout{
+      
+    } */
 }
 
 /* Adjustments for screens up to 768px */
 @media (max-width: 768px) {
     .navbar {
+        width: 100%;
         flex-direction: column; /* Stack items vertically */
         padding: 10px;
         height: 60px; /* Adjust height */
@@ -163,7 +176,7 @@
 
     .navbar-logout {
         margin-top: 0px; /* Add top margin for logout button */
-        margin-left: 500px;
+        margin-left: 450px;
          /* Remove left margin */
     }
 }
@@ -222,4 +235,6 @@
         margin-left: 150px;
          /* Remove left margin */
     }
+
+
 }
