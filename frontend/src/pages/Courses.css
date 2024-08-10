@@ -161,11 +161,6 @@
       width: 100%;
       max-width: 300px; /* Ensure cards don’t get too large on very small screens */
   }
-
-  .course-card:hover {
-   background: #000;
-}
-
   .popup-content {
       width: 90%;
       padding: 15px;
