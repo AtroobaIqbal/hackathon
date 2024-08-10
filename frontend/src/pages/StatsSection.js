@@ -84,7 +84,7 @@ const Stats = () => {
         <div className="container mx-auto flex items-center justify-between">
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-4 "  style={{ marginLeft: '12em' }}>
-            <Link to="/" className="navbar-link text-white hover:text-gray-300">Home</Link>
+            <Link to="/home" className="navbar-link text-white hover:text-gray-300">Home</Link>
             <Link to="" className="navbar-link text-white hover:text-gray-300">About</Link>
             <Link to="" className="navbar-link text-white hover:text-gray-300">Contact</Link>
           </div>
@@ -101,7 +101,7 @@ const Stats = () => {
         <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} bg-blue-900`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <ul className="list-none p-0 m-0">
-              <li><Link to="/" className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Home</Link></li>
+              <li><Link to="/home" className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Home</Link></li>
               <li><Link to="" className="block px-4 py-2 text-white hover:bg-gray-700 rounded">About</Link></li>
               <li><Link to="/" className="block px-4 py-2 text-white hover:bg-gray-700 rounded">Contact</Link></li>
             </ul>
