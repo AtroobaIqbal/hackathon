@@ -57,12 +57,13 @@
     }
 
     .heading{
-        margin-right: 300px;
+        margin-right: 200px;
     }
  
 }
 
 @media (max-width: 768px) {
+
     .home-main-content {
         margin-left: 0; /* Remove margin for smaller screens */
         background-image: none; /* Remove background image */
@@ -78,11 +79,15 @@
         max-width: none; /* Remove max-width limitation */
         margin: 10px 0; /* Add vertical spacing */
     }
+
+    .heading{
+        margin-left: 200px;
+    }
 }
 
 @media (max-width: 500px) {
     .home-page-layout {
-        width: 100%;
+        width: 800px;
         min-height: 1000px; /* Ensure enough height for small screens */
     }
 
@@ -112,7 +117,7 @@
     }
 
     .heading{
-        margin-left: 300px;
+        margin-left: 200px;
     }
 }
 

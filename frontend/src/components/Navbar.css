@@ -9,6 +9,7 @@
     height: 60px;
     box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Needed for positioning the toggle button absolutely */
+    margin: 0 auto; /* Center align navbar */
 }
 
 /* Toggle button styling */
@@ -20,8 +21,8 @@
     cursor: pointer;
     display: none; /* Hidden by default */
     position: absolute; /* Position relative to the navbar container */
-    top: 15px; /* Adjust to align with top of navbar */ /* Align to the right side */
-    margin-left: 10px; /* Ensure it's on top */
+    top: 15px; /* Adjust to align with top of navbar */
+    right: 20px; /* Align to the right side */
 }
 
 /* Logo container styling */
@@ -29,8 +30,6 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
-    margin-left: 60px; 
-   
 }
 
 /* Logo image styling */
@@ -55,7 +54,7 @@
 .navbar-link {
     color: #819deb;
     text-decoration: none;
-    transition: color 0.3s;  /* Smooth color transition */
+    transition: color 0.3s; /* Smooth color transition */
 }
 
 .navbar-link:hover {
@@ -72,8 +71,8 @@
     color: #3482e7;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
-    margin-left: auto; 
-    margin-right: 10px;/* Pushes the logout button to the right */
+    margin-left: auto; /* Pushes the logout button to the right */
+    margin-right: 20px; /* Adjust spacing from the right edge */
 }
 
 .navbar-logout:hover {
@@ -83,67 +82,52 @@
 
 /* Responsive adjustments for screens up to 1366px */
 @media (max-width: 1366px) {
-
     .navbar-links {
-        display: flex;
-        margin-left: auto; 
-        margin-right: 1000px;/* Align links to the right */
+        margin-left: auto; /* Align links to the right */
     }
 
     .navbar-logo-img {
-        margin-bottom: 20px;
+        margin-left: 40px;
     }
-
     .navbar-toggle {
-        display: block; /* Show toggle button */
+        display: block;
+        margin-right: 1250px; /* Show toggle button */
     }
-    
-    .navbar-logout{
-        margin-bottom: 10px;
-    }
-
-
 }
 
 /* Adjustments for screens up to 1200px */
 @media (max-width: 1200px) {
-    .navbar{
+    .navbar {
         width: 100%;
+         /* Full width */
     }
+    
     .navbar-links {
         display: none; /* Hide links for smaller screens */
-    }
-    .navbar-toggle {
-        margin-left: 20px;
     }
 
     .navbar-toggle {
         display: block; /* Show toggle button */
     }
-
-    /* .navbar-logout{
-      
-    } */
 }
 
 /* Adjustments for screens up to 768px */
 @media (max-width: 768px) {
     .navbar {
-        width: 100%;
+        width: 760px;
         flex-direction: column; /* Stack items vertically */
         padding: 10px;
-        height: 60px; /* Adjust height */
+        height: 70px; /* Adjust height */
         position: relative; /* Ensure the navbar is positioned relative for absolute children */
     }
 
-    .navbar-left, .navbar-logo {
-        flex-grow: 0; /* Prevent flex-grow in smaller screens */
+    .navbar-logo {
+        margin-top: -39px; /* Adjust spacing */
     }
 
     .navbar-toggle {
         font-size: 30px; /* Adjust font size for smaller screens */
-        margin-right: 670px; /* Remove margin */
-         /* Adjust margin */
+        margin-right: 700px; /* Reset margin */
     }
 
     .navbar-links {
@@ -163,78 +147,39 @@
     }
 
     .navbar-links li {
-        margin-left: 0; /* Remove left margin */
+        margin: 0; /* Remove margin */
         text-align: center; /* Center align text */
     }
 
     .navbar-link {
         padding: 15px; /* Add padding for better touch experience */
-        display: block;
-        margin-top: 10px; 
-        /* Make links block-level for easier clicking */
+        display: block; /* Make links block-level for easier clicking */
+        margin-top: 10px; /* Add margin top */
     }
 
-    .navbar-logout {
-        margin-top: 0px; /* Add top margin for logout button */
-        margin-left: 450px;
-         /* Remove left margin */
+    .navbar-logout {/* Add top margin for logout button */
+        margin-left: 450px; /* Remove left margin */
     }
 }
+
+/* Adjustments for screens up to 500px */
 @media (max-width: 500px) {
-    .navbar {
-        flex-direction: column; /* Stack items vertically */
-        padding: 10px;
-        height: 60px;
-        width: 100%; /* Adjust height */
-        position: relative; /* Ensure the navbar is positioned relative for absolute children */
+    .navbar-toggle {
+        margin-top: 5px;
+        font-size: 20px; /* Adjust font size for smaller screens */
+        margin-right: 310px; /* Adjust margin */
     }
 
-    .navbar-left, .navbar-logo {
-        flex-grow: 0; /* Prevent flex-grow in smaller screens */
+    .navbar-links {
+        top: 50px; /* Adjust based on new height */
     }
 
     .navbar-logo-img {
-        margin-top: 2px;
-    }
-    .navbar-toggle {
-        font-size: 20px; /* Adjust font size for smaller screens */
-        margin-right: 350px; /* Remove margin */
-        margin-top: 10px; /* Adjust margin */
-    }
-
-    .navbar-links {
-        display: none; /* Hide links by default */
-        flex-direction: column; /* Stack links vertically */
-        width: 100%; /* Full width */
-        background-color: #fff; /* Background color */
-        position: absolute; /* Position it absolutely to overlay */
-        top: 60px; /* Adjust based on navbar height */
-        left: 0; /* Align to the left */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow for overlay */
-        z-index: 50; /* Ensure it's behind the toggle button */
-    }
-
-    .navbar-links.active {
-        display: flex; /* Show links when active */
-    }
-
-    .navbar-links li {
-        margin-left: 0; /* Remove left margin */
-        text-align: center; /* Center align text */
-    }
-
-    .navbar-link {
-        padding: 15px; /* Add padding for better touch experience */
-        display: block;
-        margin-top: 10px; 
-        /* Make links block-level for easier clicking */
+        height: 30px; /* Adjust logo size */
     }
 
     .navbar-logout {
-        margin-top: 0px; /* Add top margin for logout button */
-        margin-left: 150px;
-         /* Remove left margin */
+        margin-left: 70px; /* Push logout button to the right */
+         /* Adjust spacing */
     }
-
-
 }
