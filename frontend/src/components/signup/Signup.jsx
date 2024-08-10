@@ -81,7 +81,7 @@ function Signup() {
                 src="/smit.png"
                 alt="Logo"
                 className="mb-2"
-                style={{ width: "100px" }}
+                style={{ width: "120px", display: "block", margin: "0 auto" }}
               />
               <h3>Sign Up</h3>
             </div>
@@ -196,3 +196,5 @@ function Signup() {
 }
 
 export default Signup;
+
+

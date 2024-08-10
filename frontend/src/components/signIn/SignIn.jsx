@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // Validation functions
 const validateEmail = (value) => {
@@ -44,9 +45,11 @@ const validateRollNo = (value, role) => {
 };
 
 function Signin() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleSignin = async (values, { resetForm }) => {
     try {
-      const rollNo = values.role === "student" ? `WMA${values.rollNo}` : ""; // Prefix rollNo with "WMA"
+      const rollNo = values.role === "student" ? `WMA${values.rollNo}` : "";
       const response = await axios.post("http://localhost:5000/api/auth/login", {
         email: values.email,
         password: values.password,
@@ -57,6 +60,14 @@ function Signin() {
       if (response.status === 200) {
         toast.success("Sign In Successful!");
         console.log("User Data: ", response.data); // Handle the user data as needed
+        
+        // Redirect based on role
+        if (values.role === "admin") {
+          navigate("/admin"); // Admin dashboard route
+        } else if (values.role === "student") {
+          navigate("/home"); // Student dashboard route
+        }
+
         resetForm();
       }
     } catch (error) {
@@ -79,7 +90,7 @@ function Signin() {
                 src="/smit.png"
                 alt="Logo"
                 className="mb-2"
-                style={{ width: "100px" }}
+                style={{ width: "120px", display: "block", margin: "0 auto" }}
               />
               <h3>Sign In</h3>
             </div>
@@ -88,7 +99,7 @@ function Signin() {
                 email: "",
                 password: "",
                 role: "",
-                rollNo: "", 
+                rollNo: "",
               }}
               onSubmit={handleSignin}
             >
@@ -143,7 +154,7 @@ function Signin() {
                         const value = e.target.value;
                         setFieldValue("role", value);
                         if (value === "student") {
-                          setFieldValue("rollNo", ""); 
+                          setFieldValue("rollNo", "");
                         }
                       }}
                     >

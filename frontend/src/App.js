@@ -35,7 +35,7 @@ function App() {
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/calendar" element={<CalendarPage />} />
                         <Route path="/certificate" element={<Certificate />} />
-                        <Route path="/signup" element={<Signup />} />
+                        <Route path="/" element={<Signup />} />
                         <Route path="/signin" element={<Signin />} />
                         <Route
                             path="/"
