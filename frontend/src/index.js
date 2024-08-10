@@ -3,27 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
  import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Signup from './components/signup/Signup';
-import Signin from './components/signIn/SignIn';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+// import Signup from './components/signup/Signup';
+// import Signin from './components/signIn/SignIn';
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+// } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/signin",
-    element: <Signin />,
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/signup",
+//     element: <Signup />,
+//   },
+//   {
+//     path: "/signin",
+//     element: <Signin />,
+//   },
+// ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,7 +31,7 @@ root.render(
      <App />    
  
     <ToastContainer />
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
     
   </React.StrictMode>
 );

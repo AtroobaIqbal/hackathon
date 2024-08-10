@@ -11,6 +11,8 @@ import './App.css';
 import StatsSection from './pages/StatsSection';
 import CalendarPage from './pages/CalendarPage';
 import Certificate from './components/Certificate';
+import Signup from './components/signup/Signup';
+import Signin from './components/signIn/SignIn';
 
 
 function App() {
@@ -41,6 +43,8 @@ function App() {
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/calendar" element={<CalendarPage />} />
                         <Route path="/certificate" element={<Certificate />} />
+                        <Route path="/signup" element={<Signup />} />
+                        <Route path="/signin" element={<Signin />} />
                         <Route
                             path="/"
                             element={ 
@@ -55,7 +59,7 @@ function App() {
                     </Routes>
                     
                 </main>
-         </div>
+            </div>
         </Router>
     );
 }
