@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Courses from './pages/Courses';
 import Profile from './pages/Profile';
@@ -7,9 +7,19 @@ import CalendarPage from './pages/CalendarPage';
 import Certificate from './components/Certificate';
 import Signup from './components/signup/Signup';
 import Signin from './components/signIn/SignIn';
+import NavbarWrapper from './components/NavbarWrapper';
+import Sidebar from './components/Sidebar';
+import image from './assets/smit.png';
 
 
 function App() {
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen);
+    };
+    const closeSidebar = () => {
+        setSidebarOpen(false);
+    };
     return (
         <Router> 
             <div className="App">
