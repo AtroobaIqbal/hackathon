@@ -167,7 +167,7 @@
     .navbar-toggle {
         margin-top: 5px;
         font-size: 20px; /* Adjust font size for smaller screens */
-        margin-right: 310px; /* Adjust margin */
+        margin-right: 700px; /* Adjust margin */
     }
 
     .navbar-links {
@@ -179,7 +179,7 @@
     }
 
     .navbar-logout {
-        margin-left: 70px; /* Push logout button to the right */
+        margin-left: 450px; /* Push logout button to the right */
          /* Adjust spacing */
     }
 }
