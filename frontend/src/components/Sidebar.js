@@ -4,12 +4,7 @@ import { FaBook, FaUser } from 'react-icons/fa';
 
 
 const Sidebar = ({ isOpen, onClose }) => {
-    const handleLogout = () => {
-        // Implement logout logic here, e.g., clearing auth tokens
-        window.location.href = './signup'; // Redirect to login page
-    };
 
-    
 
     return (
         <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
@@ -27,11 +22,6 @@ const Sidebar = ({ isOpen, onClose }) => {
                         <a href="/profile" className="sidebar-link" >
                             <FaUser className="icon" /> Profile
                         </a>
-                    </li>
-                    <li className="sidebar-item">
-                        <button className="logout-button" onClick={handleLogout}>
-                            Logout
-                        </button>
                     </li>
                 </ul>
             </aside>
