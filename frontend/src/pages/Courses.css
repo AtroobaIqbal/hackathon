@@ -3,8 +3,8 @@
   text-align: center;
   padding: 20px;
   background: rgb(191, 208, 253);
-  max-width: 1500px;
-  height: 700px;
+  max-width: 3000px;
+  height: 1200px;
   max-height: 2000px;
   margin: 0 auto; /* Center align the container */
 }
@@ -13,7 +13,7 @@
 .course-heading {
   font-size: 2em;
   margin-bottom: 20px;
-  color:   #3482e7;
+  color: #3482e7;
   font-style: italic;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -33,14 +33,21 @@
 
 /* Styling for individual course cards */
 .course-card {
-  background-color: #f4f4f4;
+  box-shadow: #3e50f1dc 5px 5px 5px;
+  color: #3482e7;
+  background-color: #19185e;
+  color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
-  width: 200px;
-  cursor: pointer;
+  height: 300px;
+  width: 500px;
+  cursor:pointer;
   transition: background-color 0.3s, transform 0.3s;
+  /* Ensure transition properties are consistent for hover effect */
 }
+
+
 
 /* Hover effect for course cards */
 .course-card:hover {
@@ -101,23 +108,23 @@
   color: white;
 }
 
-/* Responsive adjustments for screens up to 1366x768 */
+/* Responsive adjustments for screens up to 1366px */
 @media (max-width: 1366px) {
   .course-heading,
   .course-heading2 {
-      font-size: 2em; /* Slightly smaller font size */
+    font-size: 1.8em; /* Slightly smaller font size */
   }
 
   .course-cards {
-      gap: 15px; /* Reduce gap between cards */
+    gap: 15px; /* Reduce gap between cards */
   }
   
   .course-card {
-      width: 250px; 
-      height: 200px;
-      color: #3482e7;
-      background-color: #19185e;
-      box-shadow: #3e50f1dc 5px 5px 5px;/* Smaller card width */
+    width: 250px;
+    height: 200px;
+    color: #3482e7;
+    background-color: #19185e;
+    box-shadow: #3e50f1dc 5px 5px 5px; /* Smaller card width */
   }
 }
 
@@ -125,51 +132,51 @@
 @media (max-width: 1024px) {
   .course-heading,
   .course-heading2 {
-      font-size: 1.5em;
+    font-size: 1.5em;
   }
 
   .course-card {
-      width: 160px;
+    width: 300px;
   }
 }
 
 @media (max-width: 768px) {
   .course-heading,
   .course-heading2 {
-      font-size: 1.2em;
+    font-size: 1.2em;
   }
 
   .course-card {
-      width: 140px;
+    width: 200px;
   }
 
   .popup-content {
-      width: 90%;
+    width: 90%;
   }
 }
 
 @media (max-width: 500px) {
-  .course-container{
-    height: 1800px;
+  .course-container {
+    height: auto; /* Adjust height to fit content */
   }
+
   .course-heading,
   .course-heading2 {
-      font-size: 1em;
+    font-size: 1em;
   }
 
   .course-card {
-      width: 100%;
-      max-width: 300px; /* Ensure cards don’t get too large on very small screens */
+    width: 100%;
+    max-width: 300px; /* Ensure cards don’t get too large on very small screens */
   }
+  
   .popup-content {
-      width: 90%;
-      padding: 15px;
+    width: 90%;
+    padding: 15px;
   }
 
   .generate-button {
-      font-size: 14px;
-      padding: 8px 16px;
+    font-size: 14px;
+    padding: 8px 16px;
   }
-
-
 }
