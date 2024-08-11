@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
-import './Profile.css'; // Import the CSS file for styling // Info icon
+import './Profile.css'; // Import the CSS file for styling
 import profileImg from '../assets/profile.jpg';
 
 function Profile() {
-  const [name, setName] = useState('Tia');
-  const [profilePicture, setProfilePicture] = useState(profileImg);
+  // Initialize state with localStorage values if available
+  const [name, setName] = useState(localStorage.getItem('name') || 'user');
+  const [profilePicture, setProfilePicture] = useState(localStorage.getItem('profilePicture') || profileImg);
+  
   const [newName, setNewName] = useState('');
   const [newProfilePic, setNewProfilePic] = useState('');
 
@@ -17,15 +19,21 @@ function Profile() {
     { id: 4, title: 'Digital Marketer' },
   ];
 
+  useEffect(() => {
+    // Save name and profile picture to localStorage when they change
+    localStorage.setItem('name', name);
+    localStorage.setItem('profilePicture', profilePicture);
+  }, [name, profilePicture]);
+
   const handleNameChange = () => {
-    if (newName) {
+    if (newName.trim()) {
       setName(newName);
       setNewName('');
     }
   };
 
   const handleProfilePicChange = () => {
-    if (newProfilePic) {
+    if (newProfilePic.trim()) {
       setProfilePicture(newProfilePic);
       setNewProfilePic('');
     }
@@ -37,9 +45,7 @@ function Profile() {
         <div className="profile-info">
           <h1 className="student-name">{name}</h1>
           <img src={profilePicture} alt="Profile" className="profile-picture" />
-          <button className="info-button">
-             Profile Info
-          </button>
+          <button className="info-button">Profile Info</button>
           <div className="edit-profile">
             <div>
               <input
@@ -50,13 +56,15 @@ function Profile() {
               />
               <button onClick={handleNameChange}>Change Name</button>
             </div>
-            <input
-              type="text"
-              placeholder="New profile picture URL"
-              value={newProfilePic}
-              onChange={(e) => setNewProfilePic(e.target.value)}
-            />
-            <button onClick={handleProfilePicChange}>Change Profile Picture</button>
+            <div>
+              <input
+                type="text"
+                placeholder="New profile picture URL"
+                value={newProfilePic}
+                onChange={(e) => setNewProfilePic(e.target.value)}
+              />
+              <button onClick={handleProfilePicChange}>Change Profile Picture</button>
+            </div>
           </div>
         </div>
       </div>
@@ -75,3 +83,4 @@ function Profile() {
 }
 
 export default Profile;
+

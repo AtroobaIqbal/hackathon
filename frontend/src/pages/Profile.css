@@ -3,7 +3,8 @@
   text-align: center;
   padding: 20px;
   width: 100%; /* Make width responsive */
-  max-width: 1500px; /* Set a maximum width for large screens */
+  max-width: 3000px; 
+  height: 1200px;/* Set a maximum width for large screens */
   margin: 0 auto; /* Center the profile container */
   background-color: white;
 }
@@ -134,7 +135,8 @@
 
 @media (max-width: 768px) {
   .student-profile {
-    padding: 10px; /* Adjust padding */
+    padding: 10px; 
+    height: 1200px;/* Adjust padding */
   }
 
   .profile-picture {

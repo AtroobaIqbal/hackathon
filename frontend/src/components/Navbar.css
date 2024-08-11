@@ -5,7 +5,7 @@
     padding: 10px 20px; /* Adjust padding as needed */
     background-color: #fff; /* Background color for the navbar */
     border-bottom: 1px solid #ddd; /* Border at the bottom of the navbar */
-    max-width: 1500px; /* Full width */
+    max-width: 3000px; /* Full width */
     height: 60px;
     box-sizing: border-box; /* Include padding and border in element's total width and height */
     position: relative; /* Needed for positioning the toggle button absolutely */
