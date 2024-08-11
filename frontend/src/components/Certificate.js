@@ -10,7 +10,7 @@ const Certificate = ({ recipientName, courseName, completionDate, studentId }) =
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/auth/students");
+        const response = await axios.get("https://hackathon-pearl-mu.vercel.app");
         setStudents(response.data);
       } catch (error) {
         console.error("Error fetching students:", error);
@@ -22,7 +22,7 @@ const Certificate = ({ recipientName, courseName, completionDate, studentId }) =
 
   const downloadPdf = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/generate-certificate", {
+      const response = await axios.post("https://hackathon-pearl-mu.vercel.app", {
         studentId: studentId, 
       }, {
         responseType: 'blob' 
