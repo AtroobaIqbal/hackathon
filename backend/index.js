@@ -113,8 +113,8 @@ app.get(
 //route to get certificate if course is completed
 app.post(
   "./generate-certificate",
-  fetchStudent,
-  fetchCourse,
+  // fetchStudent,
+  // fetchCourse,
   checkCourseCompletion,
   generateCertificate
 );
