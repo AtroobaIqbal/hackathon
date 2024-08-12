@@ -51,7 +51,7 @@ const validateConfirmPassword = (password, confirmPassword) => {
 function Signup() {
   const handleSignup = async (values, { resetForm }) => {
     try {
-      const response = await axios.post('https://hackathon-pearl-mu.vercel.app', { 
+      const response = await axios.post('https://hackathon-pearl-mu.vercel.app/api/auth/register', { 
         name: values.fullName,
         email: values.email,
         password: values.password,
