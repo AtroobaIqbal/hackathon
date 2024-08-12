@@ -33,6 +33,9 @@ const students = [
   { id: 1, name: "Jane Smith", courses: ["flutter", "python"] },
 ];
 
+app.get('/test', function (req, res) {
+  res.send('hello world')
+})
 // //Routes
 // app.use('/generate-certificate', certificateRoutes);
 
