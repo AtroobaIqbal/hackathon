@@ -22,7 +22,7 @@ const validateEmail = (value) => {
   let error;
   if (!value) {
     error = "Email is required";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z.-]+\.[A-Z]{2,}$/i.test(value)) {
     error = "Invalid email address";
   }
   return error;
@@ -51,24 +51,40 @@ const validateConfirmPassword = (password, confirmPassword) => {
 function Signup() {
   const handleSignup = async (values, { resetForm }) => {
     try {
-      const response = await axios.post('https://hackathon-pearl-mu.vercel.app/api/auth/register', { 
-        name: values.fullName,
-        email: values.email,
-        password: values.password,
-      });
+      console.log("Signup values:", values);
+
+      const response = await axios.post(
+        "https://hackathon-pearl-mu.vercel.app/api/auth/register",
+        {
+          name: values.fullName,
+          email: values.email,
+          password: values.password,
+          role: "student", // You can set the role here if it's fixed
+        }
+      );
+
+      console.log("Response status:", response.status);
+      console.log("Response data:", response.data);
 
       if (response.status === 201) {
         toast.success("Sign Up Successful!");
         resetForm();
       }
     } catch (error) {
-      if (error.response && error.response.data && error.response.data.message) {
+      console.error("Error during signup:", error);
+
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
         toast.error(error.response.data.message);
       } else {
         toast.error("Sign Up Failed!");
       }
     }
   };
+
 
   return (
     <div className="container mt-5">
@@ -102,9 +118,7 @@ function Signup() {
                       type="text"
                       name="fullName"
                       className={`form-control ${
-                        errors.fullName && touched.fullName
-                          ? "is-invalid"
-                          : ""
+                        errors.fullName && touched.fullName ? "is-invalid" : ""
                       }`}
                       placeholder="Full Name"
                       validate={validateFullName}
@@ -138,9 +152,7 @@ function Signup() {
                       type="password"
                       name="password"
                       className={`form-control ${
-                        errors.password && touched.password
-                          ? "is-invalid"
-                          : ""
+                        errors.password && touched.password ? "is-invalid" : ""
                       }`}
                       placeholder="Password"
                       validate={validatePassword}
@@ -196,5 +208,3 @@ function Signup() {
 }
 
 export default Signup;
-
-
